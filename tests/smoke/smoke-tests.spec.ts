@@ -18,16 +18,6 @@ import { TestDataProvider } from '@support/testdata/TestDataProvider';
 test.describe.configure({ mode: 'serial' });
 
 test.describe('ParaBank - Smoke Tests', () => {
-  const smokeUser = TestDataProvider.generateUserData({
-    firstName: 'Kavya',
-    lastName: 'Menon',
-    address: '18 Park Street',
-    city: 'Kolkata',
-    state: 'West Bengal',
-    zipCode: '700016',
-    phone: '9830012345',
-  });
-
   test(
     'TC-SMK-001: Visitor can access the banking entry page',
     { tag: ['@runFirst', '@P1'] },
@@ -90,6 +80,18 @@ test.describe('ParaBank - Smoke Tests', () => {
     'TC-SMK-003: New customer can register, log out, and sign back in',
     { tag: ['@runFirst', '@P1'] },
     async ({ registrationPage, loginPage, homePage, accountOverviewPage }) => {
+      const smokeUser = TestDataProvider.generateUserData({
+        firstName: 'Ashish',
+        lastName: 'Khadka',
+        address: 'Main Street, Itahari',
+        city: 'Sunsari',
+        state: 'Koshi Province',
+        zipCode: '56705',
+        phone: '9801234567',
+        // ParaBank may reject usernames with underscores, returning a generic "already exists" error
+        username: `ashishnepal${Date.now().toString().slice(-6)}${Math.random().toString(36).substring(2,5)}`,
+      });
+
       await AllureReporter.attachDetails({
         epic: 'Smoke Tests',
         feature: 'Authenticated Customer Journey',
@@ -100,6 +102,8 @@ test.describe('ParaBank - Smoke Tests', () => {
       await test.step('Register a brand-new customer and reach account overview', async () => {
         await registrationPage.navigateToRegistration();
         await registrationPage.registerAndVerifySuccess(smokeUser);
+        // ParaBank doesn't auto-redirect to overview after registration, so we navigate explicitly
+        await accountOverviewPage.navigateToAccountOverview();
         await accountOverviewPage.verifyAccountOverviewPageLoaded();
         await accountOverviewPage.verifyAccountsAvailable();
         const summaries = await accountOverviewPage.logAccountSummaries();

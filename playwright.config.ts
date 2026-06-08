@@ -172,7 +172,8 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     baseURL: ConfigManager.setBaseUIUrl(),
-    headless: ConfigManager.isHeadless(),
+    headless: isCI,
+    launchOptions: { slowMo: 300 },
     viewport: { width: 1280, height: 720 },
     ignoreHTTPSErrors: true,
     screenshot: SetupConstants.ONLY_ON_FAILURE,

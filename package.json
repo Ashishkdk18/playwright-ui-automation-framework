@@ -5,12 +5,12 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rajeshyemul/playwright-ui-automation-framework.git"
+    "url": "https://github.com/Ashishkdk18/playwright-ui-automation-framework.git"
   },
   "bugs": {
-    "url": "https://github.com/rajeshyemul/playwright-ui-automation-framework/issues"
+    "url": "https://github.com/Ashishkdk18/playwright-ui-automation-framework/issues"
   },
-  "homepage": "https://github.com/rajeshyemul/playwright-ui-automation-framework#readme",
+  "homepage": "https://github.com/Ashishkdk18/playwright-ui-automation-framework#readme",
   "files": [
     "src",
     "tests",
@@ -59,7 +59,7 @@
     "page-object-model",
     "test-automation"
   ],
-  "author": "Rajesh Yemul",
+  "author": "Ashish Khadka",
   "license": "MIT",
   "type": "commonjs",
   "devDependencies": {

@@ -109,6 +109,11 @@ export class RegistrationPage extends BasePage {
    */
   async verifySuccessMessage(): Promise<void> {
     await StepRunner.run('Registration - verify success', async () => {
+      // Wait for either the success or error message to appear to avoid race conditions
+      await Promise.race([
+        this.page.locator('#rightPanel h1').filter({ hasText: /welcome/i }).waitFor({ state: 'visible', timeout: 10000 }).catch(() => {}),
+        this.page.locator(LOCATORS.ERROR_MESSAGE).waitFor({ state: 'visible', timeout: 10000 }).catch(() => {})
+      ]);
       await this.waitUtils.waitForPageLoad();
 
       const currentUrl = this.page.url();

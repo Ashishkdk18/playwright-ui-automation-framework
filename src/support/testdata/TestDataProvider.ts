@@ -56,15 +56,15 @@ export class TestDataProvider {
     const timestamp = Date.now();
     const randomSuffix = Math.random().toString(36).slice(2, 8);
     const baseData: UserData = {
-      firstName: 'Aarav',
-      lastName: 'Sharma',
-      address: '24 MG Road',
-      city: 'Bengaluru',
-      state: 'Karnataka',
-      zipCode: '560001',
-      phone: '9876543210',
+      firstName: 'Ashish',
+      lastName: 'Khadka',
+      address: 'Main Street',
+      city: 'Itahari',
+      state: 'Koshi',
+      zipCode: '56705',
+      phone: '9801234567',
       ssn: this.generateUniqueSsn(),
-      username: `indianuser${timestamp}${randomSuffix}`,
+      username: `nepaliuser${timestamp}${randomSuffix}`,
       password: 'password123',
       confirmPassword: 'password123',
     };
@@ -77,12 +77,12 @@ export class TestDataProvider {
    */
   static getSmokeTestUser(): UserData {
     return this.generateUserData({
-      firstName: 'Priya',
-      lastName: 'Nair',
-      address: '15 Residency Road',
-      city: 'Bengaluru',
-      state: 'Karnataka',
-      zipCode: '560025',
+      firstName: 'Sita',
+      lastName: 'Thapa',
+      address: '15 Lakeside Road',
+      city: 'Pokhara',
+      state: 'Gandaki',
+      zipCode: '33700',
       phone: '9810012345',
     });
   }
@@ -92,12 +92,12 @@ export class TestDataProvider {
    */
   static getRegressionTestUser(): UserData {
     return this.generateUserData({
-      firstName: 'Rohan',
-      lastName: 'Mehta',
-      address: '42 Law Garden',
-      city: 'Ahmedabad',
-      state: 'Gujarat',
-      zipCode: '380006',
+      firstName: 'Ramesh',
+      lastName: 'Gurung',
+      address: '42 Durbar Marg',
+      city: 'Kathmandu',
+      state: 'Bagmati',
+      zipCode: '44600',
       phone: '9825012345',
     });
   }
@@ -107,12 +107,12 @@ export class TestDataProvider {
    */
   static getE2eTestUser(): UserData {
     return this.generateUserData({
-      firstName: 'Ananya',
-      lastName: 'Iyer',
-      address: '8 T Nagar',
-      city: 'Chennai',
-      state: 'Tamil Nadu',
-      zipCode: '600017',
+      firstName: 'Anjali',
+      lastName: 'Shrestha',
+      address: '8 Patan Square',
+      city: 'Lalitpur',
+      state: 'Bagmati',
+      zipCode: '44700',
       phone: '9840012345',
     });
   }
@@ -135,12 +135,12 @@ export class TestDataProvider {
    */
   static generateBillPayData(overrides: Partial<BillPayData> = {}): BillPayData {
     const baseData: BillPayData = {
-      payeeName: 'BESCOM',
-      address: 'Krishna Rajendra Road',
-      city: 'Bengaluru',
-      state: 'Karnataka',
-      zipCode: '560001',
-      phone: '8045678901',
+      payeeName: 'Nepal Electricity Authority',
+      address: 'Ratna Park',
+      city: 'Kathmandu',
+      state: 'Bagmati',
+      zipCode: '44600',
+      phone: '014123456',
       accountNumber: '123456789',
       verifyAccount: '123456789',
       amount: '50.00',
@@ -155,14 +155,14 @@ export class TestDataProvider {
   static getPredefinedUsers() {
     return {
       validUser: this.generateUserData({
-        firstName: 'Neha',
-        lastName: 'Verma',
-        username: 'validindianuser',
+        firstName: 'Nita',
+        lastName: 'Rai',
+        username: 'validnepaliuser',
         password: 'validpass123',
       }),
 
       invalidUser: {
-        username: 'invalidindianuser',
+        username: 'invalidnepaliuser',
         password: 'wrongpass',
       },
 

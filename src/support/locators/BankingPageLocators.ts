@@ -1,7 +1,7 @@
 export class AccountOverviewPageLocators {
   static readonly ACCOUNT_TABLE = '#accountTable';
   static readonly ACCOUNT_LINK = '#accountTable tbody tr td a';
-  static readonly ACCOUNT_BALANCE = '.ng-binding';
+  static readonly ACCOUNT_BALANCE = '#accountTable tbody tr td:nth-child(2)';
   static readonly ACCOUNT_NUMBER = 'td a';
   static readonly ACCOUNT_TYPE = 'td:nth-child(2)';
   static readonly WELCOME_MESSAGE = '#rightPanel h1';

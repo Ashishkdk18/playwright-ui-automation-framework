@@ -36,7 +36,7 @@ Use this `README.md` for setup, daily usage, and repository navigation.
 ### Installation
 
 ```bash
-git clone https://github.com/rajeshyemul/playwright-ui-automation-framework
+git clone https://github.com/Ashishkdk18/playwright-ui-automation-framework.git
 cd playwright-ui-automation-framework
 npm install
 cp .env.example .env

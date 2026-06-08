@@ -36,7 +36,7 @@ export class AccountOverviewPage extends BasePage {
   async verifyAccountOverviewPageLoaded(): Promise<void> {
     await StepRunner.run('Account Overview - verify page loaded', async () => {
       await this.expectUtils.expectPageToHaveURL(/overview\.htm/, 'Account Overview page URL', 'Not on account overview page');
-      await this.expectUtils.expectElementToBeVisible(LOCATORS.WELCOME_MESSAGE, 'Welcome message', 'Welcome message not visible');
+      await this.expectUtils.expectElementToBeVisible(LOCATORS.ACCOUNT_TABLE, 'Account table', 'Account table not visible');
     });
   }
 
